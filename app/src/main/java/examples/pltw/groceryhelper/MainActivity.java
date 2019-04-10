@@ -102,8 +102,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         TextView homePage = (TextView) findViewById(R.id.homeView);
         FrameLayout mainFrame = (FrameLayout) findViewById(R.id.fram);
-
-        if (id == R.id.grocery_list) {
+        if (id == R.id.fram) {
+            mainFrame.addView(homePage);
+        } else if (id == R.id.grocery_list) {
             mainFrame.removeView(homePage);
             setTitle("Grocery List");
             GroceryList groceryListFragment = new GroceryList();

@@ -23,13 +23,18 @@
         android:id="@+id/fram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="236dp">
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="269dp">
+
         <TextView
             android:id="@+id/homeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome to the grocery helper app!"
+            android:text="Welcome to the grocery helper app!
+            To make your grocery list please go to the Grocery List page.
+            Then, navigate to the Suggestions page to find suggestions of your grocery items.
+            Lastly, to find the links to your desired suggestions, please go to the Grocery Links.
+            Happy shopping!"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
