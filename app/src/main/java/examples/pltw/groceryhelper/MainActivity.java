@@ -14,7 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.*;
-
+import android.widget.TextView;
+import 	android.widget.FrameLayout;
 
 /*
 adding textbox:
@@ -99,35 +100,40 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        TextView homePage = (TextView) findViewById(R.id.homeView);
+        FrameLayout mainFrame = (FrameLayout) findViewById(R.id.fram);
 
         if (id == R.id.grocery_list) {
-            // Handle the camera action
+            mainFrame.removeView(homePage);
             setTitle("Grocery List");
             GroceryList groceryListFragment = new GroceryList();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fram, groceryListFragment, "GroceryList");
             fragmentTransaction.commit();
         } else if (id == R.id.suggestions) {
+            mainFrame.removeView(homePage);
             setTitle("Suggestions");
             Suggestions suggestionsFragment = new Suggestions();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fram, suggestionsFragment, "Suggestions");
             fragmentTransaction.commit();
         } else if (id == R.id.grocery_links) {
+            mainFrame.removeView(homePage);
             setTitle("Grocery Links");
             GroceryLinks groceryLinksFragment = new GroceryLinks();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fram, groceryLinksFragment, "GroceryLinks");
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-            setTitle("Fragment4");
-            Fragment4 fragmen4 = new Fragment4();
+            mainFrame.removeView(homePage);
+            setTitle("Send");
+            Fragment4 fragment4 = new Fragment4();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fram, fragmen4, "frangment4");
+            fragmentTransaction.replace(R.id.fram, fragment4, "fragment4");
             fragmentTransaction.commit();
         }
 
