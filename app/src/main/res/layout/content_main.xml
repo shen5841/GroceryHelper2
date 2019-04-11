@@ -19,23 +19,24 @@
            app:layout_constraintRight_toRightOf="parent"
            app:layout_constraintTop_toTopOf="parent" />
     -->
+    <!--Don't change the constraints of the FrameLayout below, since all the other fragments are based on these constraints-->
     <FrameLayout
         android:id="@+id/fram"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="269dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/homeView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome to the grocery helper app!
-            To make your grocery list please go to the Grocery List page.
-            Then, navigate to the Suggestions page to find suggestions of your grocery items.
-            Lastly, to find the links to your desired suggestions, please go to the Grocery Links.
-            Happy shopping!"
+            android:layout_width="392dp"
+            android:layout_height="250dp"
+            android:text="Welcome to the Grocery Helper! To make your grocery list, please do so in the Grocery List. Then, a list of suggestions for your grocery items will be listed in the Suggestions page for you to select. Lastly, you can find the links of the items that you have selected in the Groceyry Links page. Have fun shopping!"
             android:textSize="22sp"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
