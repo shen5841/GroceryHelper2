@@ -19,6 +19,7 @@ import 	android.widget.FrameLayout;
 import android.support.design.widget.CoordinatorLayout;
 import 	android.support.design.widget.FloatingActionButton;
 
+
 /*
 adding textbox:
 https://stackoverflow.com/questions/6930604/android-add-textview-to-layout-when-button-is-pressed/6932540#6932540

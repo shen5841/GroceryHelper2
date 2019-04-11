@@ -6,10 +6,11 @@
     android:id="@+id/fram_grocery_links"
     tools:context=".GroceryLinks">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="grocery links" />
-
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="https://www.amazon.com/s?k=apple&amp;i=amazonfresh&amp;ref=nb_sb_noss_2" />
 </FrameLayout>
