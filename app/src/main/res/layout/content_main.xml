@@ -34,6 +34,7 @@
             android:layout_height="250dp"
             android:text="Welcome to the Grocery Helper! To make your grocery list, please do so in the Grocery List. Then, a list of suggestions for your grocery items will be listed in the Suggestions page for you to select. Lastly, you can find the links of the items that you have selected in the Groceyry Links page. Have fun shopping!"
             android:textSize="22sp"
+            android:gravity="center"
             android:layout_marginTop="200dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"

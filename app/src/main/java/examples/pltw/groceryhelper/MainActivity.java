@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.app.*;
 import android.widget.TextView;
 import 	android.widget.FrameLayout;
+import android.support.design.widget.CoordinatorLayout;
+import 	android.support.design.widget.FloatingActionButton;
 
 /*
 adding textbox:
@@ -37,8 +39,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); //sets up fab/button
-        //checks in the button is pressed
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addNewItem); //sets up fab/button
+        fab.setVisibility(View.GONE);
+        //checks if the button is pressed
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,11 +103,23 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        //create textView object for the home page
         TextView homePage = (TextView) findViewById(R.id.homeView);
         FrameLayout mainFrame = (FrameLayout) findViewById(R.id.fram);
+
+        //The "Add" button
+        FloatingActionButton addItems = findViewById(R.id.addNewItem);
+        /*
+        CoordinatorLayout.LayoutParams p = (CoordinatorLayout.LayoutParams) addItems.getLayoutParams();
+        p.setAnchorId(View.NO_ID);
+        addItems.setLayoutParams(p);
+        */
+
         if (id == R.id.fram) {
             mainFrame.addView(homePage);
+            addItems.setVisibility(View.GONE);
         } else if (id == R.id.grocery_list) {
+            addItems.setVisibility(View.VISIBLE);
             mainFrame.removeView(homePage);
             setTitle("Grocery List");
             GroceryList groceryListFragment = new GroceryList();
@@ -112,6 +127,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fram, groceryListFragment, "GroceryList");
             fragmentTransaction.commit();
         } else if (id == R.id.suggestions) {
+            addItems.setVisibility(View.GONE);
             mainFrame.removeView(homePage);
             setTitle("Suggestions");
             Suggestions suggestionsFragment = new Suggestions();
@@ -119,6 +135,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fram, suggestionsFragment, "Suggestions");
             fragmentTransaction.commit();
         } else if (id == R.id.grocery_links) {
+            addItems.setVisibility(View.GONE);
             mainFrame.removeView(homePage);
             setTitle("Grocery Links");
             GroceryLinks groceryLinksFragment = new GroceryLinks();
@@ -130,6 +147,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+            addItems.setVisibility(View.GONE);
             mainFrame.removeView(homePage);
             setTitle("Send");
             Fragment4 fragment4 = new Fragment4();
