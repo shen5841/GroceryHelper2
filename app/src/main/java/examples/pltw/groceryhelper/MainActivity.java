@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.suggestions) {
             addItems.setVisibility(View.GONE);
             mainFrame.removeView(homePage);
-            setTitle("Suggestions");
+            setTitle("Heat Level");
             Suggestions suggestionsFragment = new Suggestions();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fram, suggestionsFragment, "Suggestions");
